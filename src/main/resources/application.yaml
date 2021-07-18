@@ -1,0 +1,35 @@
+zuul:
+  prefix: /services
+  host:
+    socket-timeout-millis: 3000000
+    connect-timeout-millis: 3000000
+
+ribbon:
+  ReadTimeout: 3000000
+  SocketTimeout: 3000000
+
+eureka:
+  client:
+  serviceUrl:
+  defaultZone: http://localhost:8761/eureka/
+
+server:
+  port: 8080
+
+spring:
+  cloud:
+    gateway:
+      globalcors:
+        cors-configurations:
+          '[/**]':
+            allowedOrigins: '*'
+            allowedHeaders: '*'
+            allowedMethods:
+              - GET
+              - POST
+              - DELETE
+              - PUT
+              - OPTIONS
+              - HEAD
+
+
